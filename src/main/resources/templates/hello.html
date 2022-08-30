@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<!-- html의 네임스페이스에 thymeleaf 설정 -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8" />
+</head>
+<body>
+<!-- 태그 안의 문장은 서버사이드 렌더링을 타지 않을 경우 출력되고, 타면 th:text의 값이 태그 안으로 들어감
+ (이것이 thymeleaf의 장점, 다른 것들은 if 어쩌구저쩌구가 보임) -->
+<p th:text="'안녕! ' + ${data}" >안녕하세요. 손님</p>
+</body>
+</html>
