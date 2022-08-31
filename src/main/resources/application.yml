@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver # h2 DB Connection과 관련된 데이터 소스 설정이 완료된다.
+
+    # 위 세팅값으로 Hikari CP를 써서 커넥션 풀 같은 세팅을 스프링이 모두 걸어준다.
+
+  jpa:
+    hibernate:
+      ddl-auto: create # application 실행시점에 테이블을 생성하고, 내가 가지고 있는 테이블 entity를 보고 지우고 다시 생성함
+    properties: # hibernate와 관련된 특정한 properites들을 사용가능케 함
+      hibernate:
+#        show_sql: true # jpa나 hibernate가 생성하는 Sql이 보임 (sysout을 통해 출력)
+        format_sql: true
+
+logging.level:
+  org.hibernate.SQL: debug # jpa나 hibernate가 생성하는 Sql이 보임 (로거를 통해서 출력)
+  org.hibernate.type: trace # 쿼리 파라미터 로그로 남기기. 하지만 values(?,?)은 여전하고 밑 라인에 새로운 줄 마지막에 출력됨.
+  # 더 이쁘게 보려면 p6spy 의 라이브러리 사용

@@ -29,6 +29,10 @@ dependencies {
 
 	//캐시도 없애고 리로딩 되게 만들어주는, 변경사항이 있으면 서버 재시동 필요없이 즉각반영 해준다. 해당 파일에서 build -> recompile
 	implementation 'org.springframework.boot:spring-boot-devtools'
+
+	//p6spy 쿼리 파라미터 로그 남기는 라이브러리
+	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.6.2'
+
 	testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 	compileOnly 'org.projectlombok:lombok:1.18.20'
 	runtimeOnly 'com.h2database:h2'
