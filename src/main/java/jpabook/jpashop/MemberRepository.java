@@ -13,14 +13,14 @@ public class MemberRepository {
     private EntityManager em;
 
     //저장
-    public Long save(Member member) {
-        em.persist(member);
-        return member.getId(); //커맨드와 쿼리를 분리하는 원칙
+    public Long save(Member_Practice memberPractice) {
+        em.persist(memberPractice);
+        return memberPractice.getId(); //커맨드와 쿼리를 분리하는 원칙
     }
 
     //조회(한개)
-    public Member find(Long id) {
-        return em.find(Member.class, id);
+    public Member_Practice find(Long id) {
+        return em.find(Member_Practice.class, id);
     }
 
 }
